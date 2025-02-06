@@ -1,10 +1,11 @@
+// variables where is the data going to store for a while and then put them for the calculation for the result. 
 let Total_ThMarks = [];
 let Total_ThCr = [];
 let Total_PrMarks = [];
 let Total_PrCr = [];
 
 
-
+// making all the nodes of the html doc for calculation.
 let ThSubMarks = document.querySelectorAll(".ThSubMarks");
 console.log(ThSubMarks);
 
