@@ -21,7 +21,6 @@ console.log(PrSubCr);
 
 
 
-
 function takeValue() {
     // theory subject marks taken here in the array : Total_ThMarks.
     ThSubMarks.forEach((val) => {
