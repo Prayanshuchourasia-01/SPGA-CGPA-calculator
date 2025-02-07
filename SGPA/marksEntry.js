@@ -11,6 +11,10 @@ let All_PrCr = [];        // These array will be filled after the function takeV
 let AllGradeScoreTh = [] ;
 let AllGradeScorePr = [] ;
 
+// let SumOfGSTh; 
+// let SumOfGSPr ; 
+// let SumOfCrTh ;
+// let SumOfCrPr ;
 
 
 
@@ -58,6 +62,9 @@ function takeValue() {
     })
     console.log(All_PrCr);
 
+
+
+
 // Variable for storing the sum of the Credit score input by the user for calculation the final result. 
     let SumOfCrTh = All_ThCr.reduce((prev , curr )=>{   
         return prev + curr ;                // For sum of theory credit 
@@ -79,11 +86,84 @@ function takeValue() {
 // 4. finally , calculate the SGPA using the formula : SGPA = Sum of Grade score / sum of credit score. 
 
 
+// For Grade Point 
 
 
+All_ThMarks.forEach((val)=>{
+    // console.log(parseInt(val));
+    if ((val>=61 && val<=70)|| val==="A+" ){
+        AllGradeScoreTh.push(parseInt(10));
+    }
+    else if ((val>=51 && val<=60)|| val==="A" ){
+        AllGradeScoreTh.push(parseInt(9));
+    }
+    else if ((val>=41 && val<=50)|| val==="B+" ){
+        AllGradeScoreTh.push(parseInt(8));
+    }
+    else if ((val>=31 && val<=40)|| val==="B" ){
+        AllGradeScoreTh.push(parseInt(7));
+    }
+    else if ((val>=28 && val<=33)|| val==="C+" ){
+        AllGradeScoreTh.push(parseInt(6));
+    }
+    else if ((val>=23 && val<=27)|| val==="C" ){
+        AllGradeScoreTh.push(parseInt(5));
+    }
+    else{
+        console.log(`Invalid input ${val}`);
+    }
 
+})
+All_PrMarks.forEach((val)=>{
+    // console.log(parseInt(val));
+    if ((val>=61 && val<=70)|| val==="A+" ){
+        AllGradeScorePr.push(parseInt(10));
+    }
+    else if ((val>=51 && val<=60)|| val==="A" ){
+        AllGradeScorePr.push(parseInt(9));
+    }
+    else if ((val>=41 && val<=50)|| val==="B+" ){
+        AllGradeScorePr.push(parseInt(8));
+    }
+    else if ((val>=31 && val<=40)|| val==="B" ){
+        AllGradeScorePr.push(parseInt(7));
+    }
+    else if ((val>=28 && val<=33)|| val==="C+" ){
+        AllGradeScorePr.push(parseInt(6));
+    }
+    else if ((val>=23 && val<=27)|| val==="C" ){
+        AllGradeScorePr.push(parseInt(5));
+    }
+    else{
+        console.log(`Invalid input ${val}`);
+    }
 
+})
 
+// Loop For calculating Theory Grade score by using the formula : Grade score = grade point x credit score .
+let SumOfGSTh = 0 ;
+let SumOfGSPr = 0 ;
+for (let i = 0 ; i<AllGradeScoreTh.length ; i++ ){
+    SumOfGSTh += AllGradeScoreTh[i]*All_ThCr[i] ; 
+}
+for (let i = 0 ; i<AllGradeScorePr.length ; i++ ){            
+    SumOfGSPr += AllGradeScorePr[i]*All_PrCr[i] ; 
+}
+
+console.log(`Sum of All Grade Score TH  : ${SumOfGSTh}`);
+console.log(`Sum of All Grade Score PR  : ${SumOfGSPr}`);
+
+var calculation = (SumOfGSTh+SumOfGSPr)/(SumOfCrTh+SumOfCrPr);
+console.log(calculation);
 
 }
+
+// export  {calculation} ; 
+var globalVariable={
+    calculation: calculation
+ };
+
+
+// OUTPUT.HTML FILE WORK HERE 
+
 
