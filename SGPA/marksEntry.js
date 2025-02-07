@@ -11,6 +11,7 @@ let All_PrCr = [];        // These array will be filled after the function takeV
 let AllGradeScoreTh = [] ;
 let AllGradeScorePr = [] ;
 
+let calculation;
 // let SumOfGSTh; 
 // let SumOfGSPr ; 
 // let SumOfCrTh ;
@@ -150,20 +151,20 @@ for (let i = 0 ; i<AllGradeScorePr.length ; i++ ){
     SumOfGSPr += AllGradeScorePr[i]*All_PrCr[i] ; 
 }
 
-console.log(`Sum of All Grade Score TH  : ${SumOfGSTh}`);
-console.log(`Sum of All Grade Score PR  : ${SumOfGSPr}`);
+// console.log(`Sum of All Grade Score TH  : ${SumOfGSTh}`);
+// console.log(`Sum of All Grade Score PR  : ${SumOfGSPr}`);
 
-var calculation = (SumOfGSTh+SumOfGSPr)/(SumOfCrTh+SumOfCrPr);
+calculation = (SumOfGSTh+SumOfGSPr)/(SumOfCrTh+SumOfCrPr);
 console.log(calculation);
 
+alert(`Your SGPA is ${calculation}`) ;
+
 }
-
-// export  {calculation} ; 
-var globalVariable={
-    calculation: calculation
- };
-
-
-// OUTPUT.HTML FILE WORK HERE 
+setTimeout(()=>{
+    location.reload();
+},45000)
+// let finalOutput ;
+// console.log(`SGPA :${calculation}`);
+// // export {calculation} ; 
 
 
