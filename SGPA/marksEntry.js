@@ -162,7 +162,7 @@ alert(`Your SGPA is ${calculation}`) ;
 }
 setTimeout(()=>{
     location.reload();
-},45000)
+},50000)
 // let finalOutput ;
 // console.log(`SGPA :${calculation}`);
 // // export {calculation} ; 
